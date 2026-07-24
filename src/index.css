@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   Estilos base del portafolio de Sofía Lezcano
+   ============================================================ */
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+  html.dark {
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    margin: 0;
+    background-color: #f5ebd8; /* crema */
+    color: #2a1114; /* tinta cálida */
+    font-family: 'Nunito', ui-sans-serif, system-ui, sans-serif;
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+
+  html.dark body {
+    background-color: #1a0c0d; /* modo oscuro cálido */
+    color: #f5ebd8;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: 'Lora', ui-serif, Georgia, serif;
+    font-weight: 500;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  /* Deja espacio bajo el navbar fijo al saltar a una sección */
+  section[id] {
+    scroll-margin-top: 5.5rem;
+  }
+
+  ::selection {
+    background-color: #790216;
+    color: #f5ebd8;
+  }
+
+  /* Barra de scroll elegante */
+  ::-webkit-scrollbar {
+    width: 11px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #ecdcbf;
+  }
+  html.dark ::-webkit-scrollbar-track {
+    background: #241012;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #790216;
+    border-radius: 999px;
+    border: 3px solid #ecdcbf;
+  }
+  html.dark ::-webkit-scrollbar-thumb {
+    border-color: #241012;
+    background: #8f0a20;
+  }
+}
+
+@layer components {
+  /* Etiqueta pequeña en mayúsculas con tracking amplio */
+  .eyebrow {
+    @apply font-sans text-xs uppercase tracking-label font-semibold;
+  }
+
+  /* Contenedor central estándar */
+  .container-x {
+    @apply mx-auto w-full max-w-6xl px-6 sm:px-8;
+  }
+}
+
+@layer utilities {
+  /* Textura de grano sutil para dar calidez de "papel" */
+  .grain::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.4;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  }
+  html.dark .grain::before {
+    opacity: 0.22;
+    mix-blend-mode: screen;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  /* Degradado dorado para textos de acento */
+  .text-gradient-gold {
+    background: linear-gradient(120deg, #c79a4b, #e7c4bc 55%, #c15a2b);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}

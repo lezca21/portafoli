@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sofía Lezcano · Diseñadora Interactiva & Fotógrafa</title>
+    <script>
+      // Truco para que GitHub Pages funcione con las rutas de React
+      // Router (ej. /proyectos/morfosis). Ver: https://github.com/rafgraph/spa-github-pages
+      // pathSegmentsToKeep = 1 porque el sitio vive en una subcarpeta
+      // (lezca21.github.io/portafolio/, no en la raíz).
+      var pathSegmentsToKeep = 1;
+      var l = window.location;
+      l.replace(
+        l.protocol +
+          '//' +
+          l.hostname +
+          (l.port ? ':' + l.port : '') +
+          l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') +
+          '/?/' +
+          l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+          (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+          l.hash,
+      );
+    </script>
+  </head>
+  <body></body>
+</html>

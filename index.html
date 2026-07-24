@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/imagenes/iconos/soleza.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#790216" />
+    <meta
+      name="description"
+      content="Sofía Lezcano — Diseñadora Interactiva (UX/UI) y fotógrafa en Medellín. Transformo ideas en recorridos con alma."
+    />
+
+    <!-- Evita el parpadeo de tema: aplica modo oscuro antes de pintar -->
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
+
+    <!-- Deshace el truco de public/404.html: reconstruye la URL real
+         (ej. /proyectos/morfosis) antes de que arranque React Router.
+         Necesario solo para GitHub Pages; no afecta a otros hostings. -->
+    <script>
+      (function (l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search
+            .slice(1)
+            .split('&')
+            .map(function (s) {
+              return s.replace(/~and~/g, '&');
+            })
+            .join('?');
+          window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
+        }
+      })(window.location);
+    </script>
+
+    <!-- Tipografías: Lora (títulos, editorial), Nunito (texto, cálida/tierna), Dancing Script (acentos) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Nunito:ital,wght@0,300..900;1,300..800&family=Dancing+Script:wght@500..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Sofía Lezcano · Diseñadora Interactiva & Fotógrafa</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
