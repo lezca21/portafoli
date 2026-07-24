@@ -1,5 +1,6 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import { site } from '../../data/content';
+import assetUrl from '../../utils/assetUrl';
 
 /**
  * Mascot — "Soleza", el solecito de Sofía, dentro de una insignia
@@ -18,7 +19,7 @@ export default function Mascot({ size = 56, float = false, className = '' }) {
       transition={{ duration: 5, ease: 'easeInOut', repeat: Infinity }}
     >
       <img
-        src={site.mascot}
+        src={assetUrl(site.mascot)}
         alt="Soleza, la mascota de Sofía"
         className="h-[68%] w-[68%] object-contain"
         draggable="false"

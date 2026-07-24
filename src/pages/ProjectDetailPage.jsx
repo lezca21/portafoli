@@ -3,6 +3,7 @@ import { Link, Navigate, useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowRight, ArrowUpRight, Award } from 'lucide-react';
 import { getAdyacentes, getProyectoBySlug } from '../data/proyectos';
+import assetUrl from '../utils/assetUrl';
 import { Reveal } from '../components/ui/Reveal';
 import BehanceButton from '../components/ui/BehanceButton';
 import EmbedGrid, { EmbedCard } from '../components/ui/EmbedGrid';
@@ -33,7 +34,7 @@ export default function ProjectDetailPage() {
       <header className="relative flex min-h-[70vh] items-end overflow-hidden pt-32">
         {project.headerImage || project.cover ? (
           <img
-            src={project.headerImage || project.cover}
+            src={assetUrl(project.headerImage || project.cover)}
             alt={project.title}
             className="absolute inset-0 h-full w-full object-cover"
           />
@@ -235,7 +236,7 @@ export default function ProjectDetailPage() {
                         >
                           <div className="aspect-square overflow-hidden rounded-lg">
                             <img
-                              src={src}
+                              src={assetUrl(src)}
                               alt={caption || project.title}
                               className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-110"
                             />

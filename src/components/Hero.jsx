@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, MapPin } from 'lucide-react';
 import { hero, site } from '../data/content';
+import assetUrl from '../utils/assetUrl';
 import Mascot from './ui/Mascot';
 
 const EASE = [0.22, 1, 0.36, 1];
@@ -133,7 +134,7 @@ export default function Hero() {
           >
             <div className="overflow-hidden rounded-[1.5rem]">
               <img
-                src={hero.photo}
+                src={assetUrl(hero.photo)}
                 alt="Sofía Lezcano"
                 className="aspect-[4/5] w-full object-cover"
               />

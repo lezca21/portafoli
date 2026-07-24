@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Plus, X } from 'lucide-react';
 import { photography, site } from '../data/content';
+import assetUrl from '../utils/assetUrl';
 import { Reveal } from './ui/Reveal';
 import { Instagram } from './ui/BrandIcons';
 
@@ -84,7 +85,7 @@ export default function Photography() {
             >
               <div className="overflow-hidden rounded-[1.25rem]">
                 <img
-                  src={photo.src}
+                  src={assetUrl(photo.src)}
                   alt={photo.caption}
                   className="w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-110"
                 />
@@ -148,7 +149,7 @@ export default function Photography() {
                 className="flex max-h-[85vh] max-w-3xl flex-col items-center"
               >
                 <img
-                  src={photos[index].src}
+                  src={assetUrl(photos[index].src)}
                   alt={photos[index].caption}
                   className="max-h-[78vh] w-auto rounded-2xl object-contain shadow-card"
                 />

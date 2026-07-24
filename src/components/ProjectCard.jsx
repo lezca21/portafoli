@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
+import assetUrl from '../utils/assetUrl';
 
 // Degradados de respaldo cuando un proyecto no tiene portada
 const gradients = {
@@ -23,7 +24,7 @@ export default function ProjectCard({ project, index = 0 }) {
       <div className="relative aspect-[4/3] overflow-hidden">
         {project.cover ? (
           <img
-            src={project.cover}
+            src={assetUrl(project.cover)}
             alt={project.title}
             className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
           />

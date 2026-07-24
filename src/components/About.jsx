@@ -1,6 +1,7 @@
 import { Code2, FileText, LayoutGrid, Layers, Lightbulb, Target, Users } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { about, expertise, site, skills, tools } from '../data/content';
+import assetUrl from '../utils/assetUrl';
 import { Item, Reveal, Stagger } from './ui/Reveal';
 import SkillsMarquee from './ui/SkillsMarquee';
 import Carousel from './ui/Carousel';
@@ -31,7 +32,7 @@ export default function About() {
                 style={{ transform: `rotate(${about.photos[0].rotate}deg)` }}
               >
                 <img
-                  src={about.photos[0].src}
+                  src={assetUrl(about.photos[0].src)}
                   alt="Sofía Lezcano"
                   className="aspect-[3/4] w-full rounded-xl object-cover"
                 />
@@ -42,7 +43,7 @@ export default function About() {
                 style={{ transform: `rotate(${about.photos[1].rotate}deg)` }}
               >
                 <img
-                  src={about.photos[1].src}
+                  src={assetUrl(about.photos[1].src)}
                   alt="Sofía Lezcano"
                   className="aspect-[3/4] w-full rounded-xl object-cover"
                 />
@@ -88,7 +89,7 @@ export default function About() {
             {/* Botón destacado: hoja de vida */}
             <Reveal delay={0.12} className="mt-9">
               <motion.a
-                href={site.cv}
+                href={assetUrl(site.cv)}
                 target="_blank"
                 rel="noreferrer"
                 whileHover={{ scale: 1.04 }}
@@ -114,7 +115,7 @@ export default function About() {
                           oscuras (CapCut, Unity) se vean bien en modo oscuro */}
                       <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-white p-1.5 ring-1 ring-ink/5">
                         <img
-                          src={tool.icon}
+                          src={assetUrl(tool.icon)}
                           alt={tool.name}
                           className="h-full w-full object-contain"
                         />
